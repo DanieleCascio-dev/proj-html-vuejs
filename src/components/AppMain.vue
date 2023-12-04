@@ -26,7 +26,7 @@ export default { components: { MainView } };
       veritatis repellendus est! Asperiores quae cum modi ipsa ex sapiente porro
       nemo beatae minima incidunt
     </p>
-    <div>GRIGLIA</div>
+    <div>COMPONENTE GRIGLIA</div>
   </section>
   <!-- /band news -->
 
@@ -56,7 +56,16 @@ export default { components: { MainView } };
   <!-- /quote section -->
 
   <!-- live dates -->
-  <div>live dates</div>
+  <section class="live">
+    <h2 class="title">Live Dates</h2>
+    <hr class="breakline" />
+    <p class="text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo perferendis
+      dolorem adipisci eligendi ex sit officia earum sint veniam, nulla suscipit
+      at quisquam eveniet provident modi molestias amet porro odio!
+    </p>
+    <div>COMPONENTE ACCORDION</div>
+  </section>
   <!-- /live dates -->
 
   <!-- view section -->
@@ -132,5 +141,15 @@ export default { components: { MainView } };
     width: 80px;
     cursor: pointer;
   }
+}
+
+/* LIVE */
+.live {
+  width: 100%;
+  height: 500px;
+  padding: 2rem;
+  background-color: $cube-charade;
+  @include flex(column, flex-start, center);
+  gap: 1rem;
 }
 </style>
