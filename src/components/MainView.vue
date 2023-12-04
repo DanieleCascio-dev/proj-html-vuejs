@@ -37,6 +37,7 @@ div {
   a {
     text-decoration: none;
     color: inherit;
+    text-transform: uppercase;
   }
 }
 </style>

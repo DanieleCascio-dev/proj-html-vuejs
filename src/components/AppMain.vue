@@ -36,7 +36,23 @@ export default { components: { MainView } };
   <!-- view section -->
 
   <!-- quote section -->
-  <div>quote</div>
+  <section class="quote">
+    <div class="top-quote"></div>
+    <div class="bottom-quote">
+      <p>
+        <q>
+          <em>
+            I just listened to it and said to myself,
+            <q>Man, I really love this album.</q> Still, today, it just soounds
+            so fresh. It sounds full of ideas. these guys knew what they were
+            doing. They're good. And they're inventice. I haven't heard anything
+            this year that's as inventive. I don't really expect to.
+          </em>
+        </q>
+      </p>
+      <img src="../assets/img/band_interview_play_icon.png" alt="" />
+    </div>
+  </section>
   <!-- /quote section -->
 
   <!-- live dates -->
@@ -44,7 +60,7 @@ export default { components: { MainView } };
   <!-- /live dates -->
 
   <!-- view section -->
-  <div>VIEW</div>
+  <MainView viewText="View all live dates " />
   <!-- view section -->
 </template>
 
@@ -83,5 +99,38 @@ export default { components: { MainView } };
   width: 15%;
   text-align: center;
   border: 1px solid $cube-mid-gray;
+}
+
+/* QUOTE */
+
+.top-quote {
+  height: 100px;
+  background-image: url(../assets/img/home-testimonial-parallax.jpg);
+  background-position: 30% 2%;
+  /* background-position-y: top; */
+  background-size: cover;
+}
+
+.bottom-quote {
+  height: 500px;
+  background-image: url(../assets/img/home-testimonial-parallax.jpg);
+  background-position: 15% 85%;
+  background-size: cover;
+  gap: 2rem;
+  @include flex(column, center, center);
+  color: $cube-white;
+  text-align: center;
+  filter: saturate(80%);
+
+  p {
+    @include container;
+    line-height: 1.7rem;
+    letter-spacing: 2px;
+  }
+
+  img {
+    width: 80px;
+    cursor: pointer;
+  }
 }
 </style>
