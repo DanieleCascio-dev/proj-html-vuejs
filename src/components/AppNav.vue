@@ -1,5 +1,8 @@
 <script>
 export default {
+  props: {
+    navPosition: String,
+  },
   data() {
     return {
       displayMenu: false,
@@ -14,7 +17,7 @@ export default {
 </script>
 
 <template>
-  <nav>
+  <nav :class="{ fixed: navPosition === fixed }">
     <div class="logo">
       <img src="../assets/img/avada-music-logo.png" alt="" />
     </div>
@@ -36,7 +39,12 @@ export default {
 nav {
   /* DEBUG */
   border: 1px dashed black;
-  background-color: darkgray;
+  background-color: transparent;
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 
   height: 80px;
   width: 100%;
@@ -48,9 +56,10 @@ nav {
   }
 
   .nav-menu {
-    width: 200px;
+    width: 100px;
     @include flex(row, center, center);
     cursor: pointer;
+    color: white;
 
     .nav-links {
       @include flex(row, center, center);
