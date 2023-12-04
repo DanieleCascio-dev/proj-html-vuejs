@@ -6,7 +6,7 @@ export default { components: { AppNav } };
 
 <template>
   <!-- Nav -->
-  <AppNav :navPosition="fixed" />
+  <AppNav :navPosition="fixed" :bgColor="transparent" :menuBar="true" />
   <!-- /Nav -->
 
   <!-- Hero -->
