@@ -22,9 +22,7 @@ export default { components: { AppNav } };
 @use "../style/partials/mixin" as *;
 
 .hero {
-  /* debug */
-  min-height: 500px;
-  border: 1px solid darkcyan;
+  height: 500px;
 
   @include flex(column, center, center);
   gap: 1rem;

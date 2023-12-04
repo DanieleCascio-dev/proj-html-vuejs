@@ -5,3 +5,8 @@
   flex-direction: $direction;
   flex-wrap: $flex-wrap;
 }
+
+@mixin container {
+  width: 50%;
+  margin: 0 auto;
+}

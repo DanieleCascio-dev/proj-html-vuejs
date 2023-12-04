@@ -38,7 +38,7 @@ export default {
 
 nav {
   /* DEBUG */
-  border: 1px dashed black;
+
   background-color: transparent;
   &.fixed {
     position: fixed;
