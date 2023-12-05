@@ -81,6 +81,15 @@ export default { components: { MainView, MainGrid } };
 @use "../style/partials/mixin" as *;
 
 .life {
+  position: relative;
+  &::before {
+    content: "";
+    width: 20%;
+    height: 15px;
+    background-color: $material-mandy;
+    position: absolute;
+    top: 0px;
+  }
   width: 100%;
   height: 200px;
   background-color: lighten($cube-charade, 5%);
