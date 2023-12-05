@@ -4,6 +4,7 @@ export default {
     navPosition: String,
     bgColor: String,
     menuBar: Boolean,
+    linksArray: Array,
   },
   data() {
     return {
@@ -38,7 +39,9 @@ export default {
     </div>
     <div class="nav-menu-alt" v-else>
       <ul>
-        <li>link</li>
+        <li v-for="link in linksArray">
+          <a :href="link">{{ link }}</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -81,6 +84,21 @@ nav {
 
     .nav-links {
       @include flex(row, center, center);
+    }
+  }
+
+  .nav-menu-alt {
+    width: 50%;
+    ul {
+      @include flex(row, center, center);
+      width: 100%;
+      gap: 1rem;
+      color: $cube-bombay;
+      li {
+        &:hover {
+          color: $cube-white;
+        }
+      }
     }
   }
 }
