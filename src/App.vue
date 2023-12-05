@@ -22,7 +22,14 @@ export default {
   <!-- /Main -->
 
   <!-- Footer -->
-  <AppFooter />
+  <AppFooter
+    :leftLinks="[
+      '@ Copyright 2012-2020',
+      'AVADA THEME BY THEMEFUSION',
+      'ALL RIGHTS RESERVED',
+      'POWERED BY WORDPRESS',
+    ]"
+  />
   <!-- /Footer -->
 </template>
 
