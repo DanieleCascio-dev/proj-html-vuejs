@@ -1,7 +1,8 @@
 <script>
+import MainGrid from "./MainGrid.vue";
 import MainView from "./MainView.vue";
 
-export default { components: { MainView } };
+export default { components: { MainView, MainGrid } };
 </script>
 
 <template>
@@ -26,7 +27,9 @@ export default { components: { MainView } };
       veritatis repellendus est! Asperiores quae cum modi ipsa ex sapiente porro
       nemo beatae minima incidunt
     </p>
-    <div>COMPONENTE GRIGLIA</div>
+    <div class="grid">
+      <MainGrid />
+    </div>
   </section>
   <!-- /band news -->
 
@@ -92,6 +95,12 @@ export default { components: { MainView } };
   background-color: $cube-charade;
   @include flex(column, flex-start, center);
   gap: 1rem;
+
+  .grid {
+    padding: 2rem 0;
+    width: 70%;
+    margin: 0 auto;
+  }
 }
 
 .title {

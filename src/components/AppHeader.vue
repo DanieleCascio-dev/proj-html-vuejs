@@ -37,6 +37,15 @@ export default { components: { AppNav, AppButton } };
 
   color: white;
 
+  h1 {
+    font-size: 5rem;
+  }
+
+  h3 {
+    font-style: oblique;
+    font-weight: lighter;
+  }
+
   .buttons {
     @include flex(row, center, center);
     gap: 2rem;

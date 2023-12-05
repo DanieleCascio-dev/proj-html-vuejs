@@ -27,7 +27,9 @@ export default {
     }"
   >
     <div class="logo">
-      <img src="../assets/img/avada-music-logo.png" alt="" />
+      <a href="">
+        <img src="../assets/img/avada-music-logo.png" alt="" />
+      </a>
     </div>
 
     <div class="nav-menu" v-if="menuBar">
