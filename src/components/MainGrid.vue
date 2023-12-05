@@ -41,7 +41,22 @@ export default {
         cardText="nulla magni aut excepturi quae amet. Incidunt  molestias consequatur!"
       />
     </div>
-    <div class="col-right"></div>
+    <div class="col-right">
+      <AppCard
+        cardWidth="large"
+        cardHeght="mid"
+        cardImg="../src\assets\img\blog-post1-400x600.jpg"
+        cardtitle="it just sounds better"
+        cardText="nulla magni aut excepturi quae amet. Incidunt  molestias consequatur!"
+      />
+      <AppCard
+        cardWidth="large"
+        cardHeght="mid"
+        cardImg="../src\assets\img\blog-post2-400x600.jpg"
+        cardtitle="it just sounds better"
+        cardText="nulla magni aut excepturi quae amet. Incidunt  molestias consequatur!"
+      />
+    </div>
   </div>
 </template>
 
@@ -49,24 +64,26 @@ export default {
 @use "../style/partials/variables" as *;
 @use "../style/partials/mixin" as *;
 .row {
-  width: 100%;
   /* debug */
-  min-height: 800px;
-  border: 1px solid lightblue;
-  @include flex(row, center, center);
+  /* min-height: 800px; */
+  /* border: 1px solid lightblue; */
+  width: 100%;
+  @include flex(row, center, stretch);
   .col-left {
     width: 60%;
-    min-height: 800px;
 
     /* debug */
-    border: 1px solid lightgreen;
+    /* min-height: 800px; */
+    /* border: 1px solid lightgreen; */
   }
 
   .col-right {
-    width: 40%;
-    min-height: 800px;
+    width: 30%;
+    @include flex(column, center, stretch, wrap);
+    gap: 2rem;
     /* debug */
-    border: 1px solid lightcoral;
+    /* min-height: 800px; */
+    /* border: 1px solid lightcoral; */
   }
 
   .col-left {

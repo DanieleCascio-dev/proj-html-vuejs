@@ -47,8 +47,7 @@ export default {
     position: absolute;
     width: calc(100% - 2rem);
     height: calc(100% - 2rem);
-    background-color: #eb4b54;
-    filter: opacity(50%);
+    background-color: $material-mandy-rgba;
     color: $cube-white;
     @include flex(row, center, center);
     text-align: center;
@@ -78,7 +77,7 @@ export default {
   }
   .bottom-card {
     position: absolute;
-    bottom: 0;
+    bottom: 1rem;
     right: 1rem;
     background-color: lighten($cube-charade, 5%);
     padding: 0.5rem 1rem;
