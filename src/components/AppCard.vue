@@ -2,6 +2,7 @@
 export default {
   props: {
     cardWidth: String,
+    cardHeght: String,
     cardImg: String,
     cardtitle: String,
     cardText: String,
@@ -11,7 +12,7 @@ export default {
 
 <template>
   <div class="card" :class="cardWidth">
-    <div class="top-card">
+    <div class="top-card" :class="cardHeght">
       <img :src="cardImg" alt="" />
     </div>
     <div class="hover-section">
@@ -34,6 +35,7 @@ export default {
 .card {
   @include flex(column, center, center);
   position: relative;
+  padding: 1rem;
 
   &:hover > .hover-section {
     opacity: 100%;
@@ -43,12 +45,13 @@ export default {
   }
   .hover-section {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
     background-color: #eb4b54;
     filter: opacity(50%);
     color: $cube-white;
     @include flex(row, center, center);
+    text-align: center;
     opacity: 0%;
     transition: all 0.3s;
   }
@@ -61,7 +64,12 @@ export default {
 
   .top-card {
     width: 100%;
-    height: 200px;
+    &.small {
+      height: 200px;
+    }
+    &.mid {
+      height: 400px;
+    }
 
     img {
       width: 100%;
@@ -71,10 +79,11 @@ export default {
   .bottom-card {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 1rem;
     background-color: lighten($cube-charade, 5%);
     padding: 0.5rem 1rem;
-    width: 100%;
+    width: calc(100% - 2rem);
+
     opacity: 100%;
     transition: all, 0.3s;
     h3 {
