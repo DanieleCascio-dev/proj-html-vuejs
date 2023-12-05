@@ -33,10 +33,17 @@ export default {
     </div>
 
     <div class="nav-menu" v-if="menuBar">
-      <i class="fa-solid fa-bars" @click="showMenu"></i>
+      <i
+        class="fa-solid fa-bars nav-bar"
+        v-if="displayMenu === false"
+        @click="showMenu"
+      ></i>
+      <i class="fa-solid fa-x nav-bar" v-if="displayMenu" @click="showMenu"></i>
 
       <ul class="nav-links" v-show="displayMenu">
-        <li>Link</li>
+        <li v-for="link in linksArray">
+          <a :href="link">{{ link }}</a>
+        </li>
       </ul>
     </div>
     <div class="nav-menu-alt" v-else>
@@ -57,6 +64,7 @@ nav {
   /* DEBUG */
 
   background-color: $material-ebony-clay;
+  position: relative;
 
   &.transparent {
     background-color: transparent;
@@ -76,16 +84,29 @@ nav {
 
   .logo {
     width: 150px;
+    z-index: 3;
   }
 
   .nav-menu {
     width: 100px;
     @include flex(row, center, center);
-    cursor: pointer;
+    /* cursor: pointer; */
     color: white;
+    .nav-bar {
+      z-index: 3;
+      cursor: pointer;
+    }
 
     .nav-links {
-      @include flex(row, center, center);
+      @include flex(column, center, center);
+      gap: 2rem;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0px;
+      right: 0;
+      background-color: $material-mandy;
+      z-index: 2;
     }
   }
 

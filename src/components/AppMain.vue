@@ -1,8 +1,9 @@
 <script>
+import MainAccordion from "./MainAccordion.vue";
 import MainGrid from "./MainGrid.vue";
 import MainView from "./MainView.vue";
 
-export default { components: { MainView, MainGrid } };
+export default { components: { MainView, MainGrid, MainAccordion } };
 </script>
 
 <template>
@@ -67,7 +68,9 @@ export default { components: { MainView, MainGrid } };
       dolorem adipisci eligendi ex sit officia earum sint veniam, nulla suscipit
       at quisquam eveniet provident modi molestias amet porro odio!
     </p>
-    <div>COMPONENTE ACCORDION</div>
+    <div class="accordion">
+      <MainAccordion />
+    </div>
   </section>
   <!-- /live dates -->
 
@@ -169,5 +172,13 @@ export default { components: { MainView, MainGrid } };
   background-color: $cube-charade;
   @include flex(column, flex-start, center);
   gap: 1rem;
+
+  .accordion {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    /* debug */
+    /* border: 1px solid lightcoral; */
+  }
 }
 </style>

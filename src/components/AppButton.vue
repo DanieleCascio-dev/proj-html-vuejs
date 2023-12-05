@@ -18,17 +18,22 @@ export default {
 @use "../style/partials/mixin" as *;
 
 .btn {
-  padding: 1rem 2rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
+
   &.primary {
     background-color: $material-mandy;
     transition: all 0.5s;
+    border: 1px solid transparent;
 
     &:hover {
-      background-color: lighten($material-mandy, 5%);
+      background-color: transparent;
+      border: 1px solid $material-mandy;
     }
   }
   &.secondary {
     background-color: transparent;
+    border: 1px solid $cube-white;
     transition: all 0.5s;
     &:hover {
       color: $material-blue-zodiac;

@@ -7,7 +7,19 @@ export default { components: { AppNav, AppButton } };
 
 <template>
   <!-- Nav -->
-  <AppNav :navPosition="fixed" :bgColor="transparent" :menuBar="true" />
+  <AppNav
+    :navPosition="fixed"
+    :bgColor="transparent"
+    :menuBar="true"
+    :linksArray="[
+      'Home',
+      'Meet The Band',
+      'Live Dates',
+      'Latest News',
+      'Albums',
+      'Fans',
+    ]"
+  />
   <!-- /Nav -->
 
   <!-- Hero -->
