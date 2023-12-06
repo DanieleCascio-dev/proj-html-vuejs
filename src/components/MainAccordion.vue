@@ -4,19 +4,44 @@ import AppButton from "./AppButton.vue";
 export default {
   data() {
     return {
-      displayCard: false,
       datesList: [
-        "17/08/2020 GEM FESTIVAL 2020 ANAKALIA, GEORGIA",
-        "24/9/2020 GROOVEFEST DOMENICAL REPUBLIC",
-        "31/10/2020 OASIS FESTIVAL 2020 MARRAKECH, MOROCCO",
-        "07/11/2020 MOGA FESTIVAL - ESSAOURIA, MOROCCO",
-        "10/12/2020 ENVISION FESTIVAL - UVITA, COSTA RICA",
+        {
+          title: "17/08/2020 GEM FESTIVAL 2020 ANAKALIA, GEORGIA",
+          subtitle: "Untold stories",
+          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus facilis pariatur ab iste, saepe a voluptates voluptas eaque voluptatem illo nihil, doloremque assumenda repudiandae solut eligendi vel magni delectus.",
+          isOpen: false,
+        },
+        {
+          title: "24/9/2020 GROOVEFEST DOMENICAL REPUBLIC",
+          subtitle: "Untold stories",
+          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus facilis pariatur ab iste, saepe a voluptates voluptas eaque voluptatem illo nihil, doloremque assumenda repudiandae solut eligendi vel magni delectus.",
+          isOpen: false,
+        },
+        {
+          title: "31/10/2020 OASIS FESTIVAL 2020 MARRAKECH, MOROCCO",
+          subtitle: "Untold stories",
+          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus facilis pariatur ab iste, saepe a voluptates voluptas eaque voluptatem illo nihil, doloremque assumenda repudiandae solut eligendi vel magni delectus.",
+          isOpen: false,
+        },
+        {
+          title: "07/11/2020 MOGA FESTIVAL - ESSAOURIA, MOROCCO",
+          subtitle: "Untold stories",
+          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus facilis pariatur ab iste, saepe a voluptates voluptas eaque voluptatem illo nihil, doloremque assumenda repudiandae solut eligendi vel magni delectus.",
+          isOpen: false,
+        },
+        {
+          title: "10/12/2020 ENVISION FESTIVAL - UVITA, COSTA RICA",
+          subtitle: "Untold stories",
+          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus facilis pariatur ab iste, saepe a voluptates voluptas eaque voluptatem illo nihil, doloremque assumenda repudiandae solut eligendi vel magni delectus.",
+          isOpen: false,
+        },
       ],
     };
   },
   methods: {
-    showCard() {
-      this.displayCard = !this.displayCard;
+    showCard(index) {
+      this.datesList[index].isOpen = !this.datesList[index].isOpen;
+      // console.log(this.datesList[index].isOpen);
     },
   },
   components: { AppButton },
@@ -25,20 +50,24 @@ export default {
 
 <template>
   <ul>
-    <li v-for="date in datesList" :key="datesList.length">
-      <span @click="showCard"><i class="fa-solid fa-plus icon"></i></span>
-      <span class="text">{{ date }}</span>
-      <div class="card" v-show="displayCard">
+    <li
+      v-for="(date, index) in datesList"
+      :key="datesList.length"
+      @mouseleave="date.isOpen = false"
+    >
+      <span @click="showCard(index)"
+        ><i class="fa-solid fa-plus icon" v-show="date.isOpen === false"></i>
+        <i class="fa-solid fa-minus icon minus" v-show="date.isOpen"></i
+      ></span>
+      <span class="text">{{ date.title }}</span>
+      <div class="card" v-if="date.isOpen">
         <div class="position">
           <img src="../assets/img/fss-demo-main-400x300.jpg" alt="" />
         </div>
         <div class="info">
-          <h3>untold stories</h3>
+          <h3>{{ date.subtitle }}</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus
-            facilis pariatur ab iste, saepe a voluptates voluptas eaque ullam
-            voluptatem illo nihil, doloremque assumenda repudiandae soluta
-            eligendi vel magni delectus.
+            {{ date.text }}
           </p>
           <div class="button">
             <AppButton btnText="Book Now" btnClass="primary" />
@@ -63,6 +92,12 @@ li {
     font-size: 0.5rem;
     vertical-align: middle;
   }
+
+  .minus {
+    background-color: $material-mandy;
+    padding: 0.1rem;
+    color: $cube-white;
+  }
   .text {
     margin-left: 1.5rem;
     color: $material-mandy;
@@ -71,6 +106,7 @@ li {
 
   .card {
     margin-top: 1rem;
+    margin-bottom: 2rem;
     @include flex(row, center, center);
     gap: 1.5rem;
 
@@ -86,6 +122,7 @@ li {
         color: $cube-white;
       }
       p {
+        color: $median-tapa;
       }
       .button {
         color: $cube-white;

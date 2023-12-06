@@ -167,16 +167,18 @@ export default { components: { MainView, MainGrid, MainAccordion } };
 /* LIVE */
 .live {
   width: 100%;
-  height: 500px;
+  min-height: 800px;
   padding: 2rem;
   background-color: $cube-charade;
   @include flex(column, flex-start, center);
   gap: 1rem;
 
   .accordion {
+    min-height: 400px;
     width: 60%;
     margin: 0 auto;
-    margin-top: 2rem;
+    margin-top: 4rem;
+
     /* debug */
     /* border: 1px solid lightcoral; */
   }
