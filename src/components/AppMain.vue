@@ -20,7 +20,7 @@ export default { components: { MainView, MainGrid, MainAccordion } };
   <!-- /Music is life -->
 
   <!-- band news -->
-  <section class="band">
+  <section class="band" id="Latest News">
     <h2 class="title">Latest Band News</h2>
     <hr class="breakline" />
     <p class="text">
@@ -60,7 +60,7 @@ export default { components: { MainView, MainGrid, MainAccordion } };
   <!-- /quote section -->
 
   <!-- live dates -->
-  <section class="live">
+  <section class="live" id="Live Dates">
     <h2 class="title">Live Dates</h2>
     <hr class="breakline" />
     <p class="text">
@@ -87,8 +87,8 @@ export default { components: { MainView, MainGrid, MainAccordion } };
   position: relative;
   &::before {
     content: "";
-    width: 20%;
-    height: 15px;
+    width: 25%;
+    height: 10px;
     background-color: $material-mandy;
     position: absolute;
     top: 0px;
@@ -117,6 +117,7 @@ export default { components: { MainView, MainGrid, MainAccordion } };
 
 .title {
   color: $cube-white;
+  font-size: 2rem;
 }
 
 .text {

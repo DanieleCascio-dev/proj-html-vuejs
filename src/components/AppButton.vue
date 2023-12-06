@@ -9,7 +9,16 @@ export default {
 
 <template>
   <div v-bind:class="btnClass" class="btn">
-    <a href=""> {{ btnText }} </a>
+    <a
+      :target="btnText === 'Latest album' ? '_blank' : ''"
+      :href="
+        btnText === 'Latest album'
+          ? 'https://www.google.com/search?q=latest+album+releases&oq=latest+album&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBggBEEUYOTIICAIQABgWGB4yCAgDEAAYFhgeMggIBBAAGBYYHjIICAUQABgWGB4yCAgGEAAYFhgeMgYIBxBFGDzSAQg2NDA3ajBqN6gCALACAA&'
+          : `#` + btnText
+      "
+    >
+      {{ btnText }}
+    </a>
   </div>
 </template>
 
@@ -18,9 +27,12 @@ export default {
 @use "../style/partials/mixin" as *;
 
 .btn {
-  padding: 0.7rem 2rem;
+  padding: 0.2rem 1.2rem;
   text-align: center;
-
+  a {
+    text-transform: uppercase;
+    font-size: 0.6rem;
+  }
   &.primary {
     background-color: $material-mandy;
     transition: all 0.5s;

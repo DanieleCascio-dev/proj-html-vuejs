@@ -23,12 +23,12 @@ export default { components: { AppNav, AppButton } };
   <!-- /Nav -->
 
   <!-- Hero -->
-  <div class="hero">
+  <div class="hero" id="Home">
     <h1>Untold Stories</h1>
-    <h3>There is an untold story behind every favorite song</h3>
+    <p><em>There is an untold story behind every favorite song.</em></p>
     <div class="buttons">
-      <AppButton btnText="LATEST ALBUM" btnClass="primary" />
-      <AppButton btnText="LIVE DATES" btnClass="secondary" />
+      <AppButton btnText="Latest album" btnClass="primary" />
+      <AppButton btnText="Live Dates" btnClass="secondary" />
     </div>
   </div>
   <!-- /Hero -->
@@ -53,9 +53,10 @@ export default { components: { AppNav, AppButton } };
     font-size: 5rem;
   }
 
-  h3 {
-    font-style: oblique;
-    font-weight: lighter;
+  p {
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
   }
 
   .buttons {

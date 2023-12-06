@@ -27,7 +27,7 @@ export default {
     }"
   >
     <div class="logo">
-      <a href="">
+      <a href="#Home">
         <img src="../assets/img/avada-music-logo.png" alt="" />
       </a>
     </div>
@@ -42,14 +42,14 @@ export default {
 
       <ul class="nav-links" v-show="displayMenu">
         <li v-for="link in linksArray">
-          <a :href="link">{{ link }}</a>
+          <a :href="`#` + link" @click="showMenu">{{ link }}</a>
         </li>
       </ul>
     </div>
     <div class="nav-menu-alt" v-else>
       <ul>
         <li v-for="link in linksArray">
-          <a :href="link">{{ link }}</a>
+          <a :href="`#` + link" @click="showMenu">{{ link }}</a>
         </li>
       </ul>
     </div>
