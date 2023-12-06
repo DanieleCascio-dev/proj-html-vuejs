@@ -221,8 +221,6 @@ export default {
     margin: 0 auto;
     margin-top: 4rem;
 
-    /* debug */
-    /* border: 1px solid lightcoral; */
   }
   /* GENERAL */
   .title {

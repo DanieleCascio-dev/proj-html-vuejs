@@ -90,7 +90,6 @@ nav {
   .nav-menu {
     width: 100px;
     @include flex(row, center, center);
-    /* cursor: pointer; */
     color: white;
     .nav-bar {
       z-index: 3;

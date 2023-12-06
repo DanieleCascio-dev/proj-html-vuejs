@@ -64,26 +64,16 @@ export default {
 @use "../style/partials/variables" as *;
 @use "../style/partials/mixin" as *;
 .row {
-  /* debug */
-  /* min-height: 800px; */
-  /* border: 1px solid lightblue; */
   width: 100%;
   @include flex(row, center, stretch);
   .col-left {
     width: 60%;
-
-    /* debug */
-    /* min-height: 800px; */
-    /* border: 1px solid lightgreen; */
   }
 
   .col-right {
     width: 30%;
     @include flex(column, center, stretch, wrap);
     gap: 2rem;
-    /* debug */
-    /* min-height: 800px; */
-    /* border: 1px solid lightcoral; */
   }
 
   .col-left {

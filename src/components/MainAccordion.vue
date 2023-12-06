@@ -70,28 +70,31 @@ export default {
         <i class="fa-solid fa-minus icon minus" v-show="date.isOpen"></i
       ></span>
       <span @click="showCard(index)" class="text">{{ date.title }}</span>
-      <div class="card" v-if="date.isOpen">
-        <div class="position">
-          <iframe
-            :src="date.position"
-            width="200"
-            height="150"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <div class="info">
-          <h3>{{ date.subtitle }}</h3>
-          <p>
-            {{ date.text }}
-          </p>
-          <div class="button">
-            <AppButton btnText="Book Now" btnClass="primary" />
+      <!-- CARD -->
+      <Transition>
+        <div class="card" v-show="date.isOpen">
+          <div class="position">
+            <iframe
+              :src="date.position"
+              width="200"
+              height="200"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="info">
+            <h3>{{ date.subtitle }}</h3>
+            <p>
+              {{ date.text }}
+            </p>
+            <div class="button">
+              <AppButton btnText="Book Now" btnClass="primary" />
+            </div>
           </div>
         </div>
-      </div>
+      </Transition>
     </li>
   </ul>
 </template>
