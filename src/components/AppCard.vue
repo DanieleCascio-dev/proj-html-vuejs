@@ -45,8 +45,8 @@ export default {
   }
   .hover-section {
     position: absolute;
-    width: calc(100% - 2rem);
-    height: calc(100% - 2rem);
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
     background-color: $material-mandy-rgba;
     color: $cube-white;
     @include flex(row, center, center);

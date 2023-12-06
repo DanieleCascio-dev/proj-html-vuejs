@@ -242,4 +242,20 @@ export default {
     border: 1px solid $cube-mid-gray;
   }
 }
+
+/* GENERAL */
+.title {
+  color: $cube-white;
+  font-size: 2rem;
+}
+.text {
+  text-align: center;
+  color: $median-tapa;
+  @include container;
+}
+.breakline {
+  width: 15%;
+  text-align: center;
+  border: 1px solid $cube-mid-gray;
+}
 </style>
