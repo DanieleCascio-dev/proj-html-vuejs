@@ -46,6 +46,7 @@ export default { components: { AppNav, AppButton } };
   background-image: url(../assets/img/home_slider.jpg);
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 
   color: white;
 

@@ -3,7 +3,19 @@ import MainAccordion from "./MainAccordion.vue";
 import MainGrid from "./MainGrid.vue";
 import MainView from "./MainView.vue";
 
-export default { components: { MainView, MainGrid, MainAccordion } };
+export default {
+  components: { MainView, MainGrid, MainAccordion },
+  data() {
+    return {
+      displayVideo: false,
+    };
+  },
+  methods: {
+    showVideo() {
+      this.displayVideo = !this.displayVideo;
+    },
+  },
+};
 </script>
 
 <template>
@@ -43,7 +55,7 @@ export default { components: { MainView, MainGrid, MainAccordion } };
   <section class="quote">
     <div class="top-quote"></div>
     <div class="bottom-quote">
-      <p>
+      <p class="quote-text">
         <q>
           <em>
             I just listened to it and said to myself,
@@ -54,7 +66,25 @@ export default { components: { MainView, MainGrid, MainAccordion } };
           </em>
         </q>
       </p>
-      <img src="../assets/img/band_interview_play_icon.png" alt="" />
+      <img
+        src="../assets/img/band_interview_play_icon.png"
+        alt="play icon"
+        @click="showVideo"
+      />
+      <p>Listen!</p>
+      <div class="video" v-if="displayVideo">
+        <i class="fa-solid fa-xmark icon" @click="showVideo"></i>
+        <iframe
+          width="500"
+          height="250"
+          src="https://www.youtube.com/embed/VtXl8xAPAtA?&autoplay=1"
+          title="Sgt. Pepper&#39;s Lonely Hearts Club Band (Remastered 2009)"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          mute="0"
+        ></iframe>
+      </div>
     </div>
   </section>
   <!-- /quote section -->
@@ -83,6 +113,7 @@ export default { components: { MainView, MainGrid, MainAccordion } };
 @use "../style/partials/variables" as *;
 @use "../style/partials/mixin" as *;
 
+/* LIFE */
 .life {
   position: relative;
   &::before {
@@ -99,7 +130,7 @@ export default { components: { MainView, MainGrid, MainAccordion } };
   @include flex(column, center, center);
   gap: 1rem;
 }
-
+/* BAND */
 .band {
   padding: 2rem;
   width: 100%;
@@ -113,23 +144,6 @@ export default { components: { MainView, MainGrid, MainAccordion } };
     width: 70%;
     margin: 0 auto;
   }
-}
-
-.title {
-  color: $cube-white;
-  font-size: 2rem;
-}
-
-.text {
-  text-align: center;
-  color: $median-tapa;
-  @include container;
-}
-
-.breakline {
-  width: 15%;
-  text-align: center;
-  border: 1px solid $cube-mid-gray;
 }
 
 /* QUOTE */
@@ -152,16 +166,43 @@ export default { components: { MainView, MainGrid, MainAccordion } };
   color: $cube-white;
   text-align: center;
   filter: saturate(80%);
+  /* position: relative; */
 
-  p {
+  .quote-text {
     @include container;
     line-height: 1.7rem;
     letter-spacing: 2px;
   }
 
+  p {
+    margin-top: -1rem;
+  }
+
   img {
     width: 80px;
     cursor: pointer;
+  }
+
+  .video {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    @include flex(row, center, center);
+    background-color: #0101018d;
+    z-index: 2;
+
+    .icon {
+      position: absolute;
+      top: 120px;
+      right: 180px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      &:hover {
+        color: $material-mandy;
+      }
+    }
   }
 }
 
@@ -182,6 +223,23 @@ export default { components: { MainView, MainGrid, MainAccordion } };
 
     /* debug */
     /* border: 1px solid lightcoral; */
+  }
+  /* GENERAL */
+  .title {
+    color: $cube-white;
+    font-size: 2rem;
+  }
+
+  .text {
+    text-align: center;
+    color: $median-tapa;
+    @include container;
+  }
+
+  .breakline {
+    width: 15%;
+    text-align: center;
+    border: 1px solid $cube-mid-gray;
   }
 }
 </style>

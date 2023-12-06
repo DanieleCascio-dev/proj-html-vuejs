@@ -59,7 +59,7 @@ export default {
         ><i class="fa-solid fa-plus icon" v-show="date.isOpen === false"></i>
         <i class="fa-solid fa-minus icon minus" v-show="date.isOpen"></i
       ></span>
-      <span class="text">{{ date.title }}</span>
+      <span @click="showCard(index)" class="text">{{ date.title }}</span>
       <div class="card" v-if="date.isOpen">
         <div class="position">
           <img src="../assets/img/fss-demo-main-400x300.jpg" alt="" />
@@ -86,19 +86,26 @@ li {
   padding: 0.5rem 1rem;
   background-color: $material-ebony-clay;
   margin-bottom: 1rem;
+  &:hover {
+    background-color: lighten($material-ebony-clay, 5%);
+  }
   .icon {
     cursor: pointer;
     color: $cube-white;
     font-size: 0.5rem;
+    padding: 0.2rem;
     vertical-align: middle;
+    &:hover {
+      background-color: $material-mandy;
+    }
   }
 
   .minus {
     background-color: $material-mandy;
-    padding: 0.1rem;
     color: $cube-white;
   }
   .text {
+    cursor: pointer;
     margin-left: 1.5rem;
     color: $material-mandy;
     vertical-align: middle;
