@@ -1,5 +1,6 @@
+@import "@fontsource-variable/assistant";
+@import "../style/partials/variables";
 /* RESET */
-
 * {
   margin: 0;
   padding: 0;
@@ -20,5 +21,14 @@ a {
 /* Font */
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "assistant", sans-serif;
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: $cube-charade;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $material-mandy-rgba;
+    border-radius: 10px;
+  }
 }

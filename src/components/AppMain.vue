@@ -167,7 +167,7 @@ export default { components: { MainView, MainGrid, MainAccordion } };
 /* LIVE */
 .live {
   width: 100%;
-  min-height: 800px;
+  min-height: 500px;
   padding: 2rem;
   background-color: $cube-charade;
   @include flex(column, flex-start, center);
